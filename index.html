@@ -12,13 +12,11 @@
 
 <body>
     <nav class="navbar">
-        <a href="a" class="logo">Portfolio.</a>
+        <a href="#" class="logo">Portfolio.</a>
         <ul>
-            <li class="active"><a href="#">Home</a> </li>
-            <li><a href="#">About</a> </li>
-    <!--    <li><a href="#">Portfolio</a> </li>
-            <li><a href="#">Service</a> </li>   !-->
-            <li><a href="#">Contact</a> </li>
+            <li class="active"><a href="#home">Home</a> </li>
+            <li><a href="#about">About</a> </li>
+            <li><a href="#contact">Contact</a> </li>
         </ul>
     </nav>
 
@@ -31,7 +29,7 @@
         <div class="bar" style="--i:1;"></div>
     </div>
 
-    <section class="home">
+    <section class="home" id="home">
         <div class="home-info">
             <h1>Sharma Mahdi</h1>
             <h2>I'm a 
@@ -40,11 +38,9 @@
                 <span style="--i:2;" data-text="Web Pentester">Web Pentester</span>
                 <span style="--i:1;" data-text="Network Pentester">Network Pentester</span>
             </h2>
-
-            <p> Bringing Ideas to Life with HTML & CSS 3+ Years of Web Development Experience
-                Passionate about building beautiful, accessible websites.
+            <p>
+                Welcome to my portfolio! I'm a junior web developer with a passion for building clean, responsive, and accessible websites. I specialize in HTML, CSS, and JavaScript, and love turning creative ideas into interactive digital experiences. I am always learning and exploring new technologies to improve my skills and deliver modern web solutions.
             </p>
-
             <div class="btn-sci">
                 <a href="https://github.com/SharmanMahdi/My-projects" class="btn">View My Work</a>
                 <div class="sci">
@@ -55,18 +51,73 @@
                 </div>
             </div>
         </div>
-
         <div class="home-img">
             <div class="img-box">
                 <div class="img-item">
                     <img src="pic2.png" alt="">
                 </div>
             </div>
-
-
         </div>
     </section>
 
-</body>
+    <section class="about" id="about">
+        <div class="about-content">
+            <h2>About Me</h2>
+            <p>
+                I'm Sharma Mahdi, a junior web developer passionate about creating modern, responsive websites. With a solid foundation in HTML, CSS, and JavaScript, I enjoy transforming ideas into interactive web experiences. I am always eager to learn new technologies and improve my skills, focusing on frontend development, design, and web security.
+            </p>
+            <ul>
+                <li>Frontend Development</li>
+                <li>UI/UX Design</li>
+                <li>Web & Network Pentesting </li>
+                <li>Continuous Learner</li>
+            </ul>
+        </div>
+    </section>
 
+    <!-- Contact Section Start -->
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <h2>Contact Me</h2>
+            <p>
+                Interested in working together or have any questions? Feel free to reach out!
+            </p>
+            <form id="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="title" placeholder="Subject" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+    <!-- Contact Section End -->
+
+    <footer class="footer">
+        <p><strong>&copy; 2023 Sharma Mahdi. All rights reserved.</strong></p>
+    </footer>
+
+    <!-- EmailJS scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init({
+              publicKey: "4mJISBWTBDTYy1WrG",
+            });
+        })();
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                emailjs.sendForm('service_oi4b4jh', 'template_ag077bc', this)
+                    .then(() => {
+                        alert('Message sent successfully!');
+                        this.reset();
+                    }, (error) => {
+                        alert('Failed to send message. Please try again.');
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+</body>
 </html>
