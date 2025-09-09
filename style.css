@@ -528,6 +528,9 @@ body {
         max-width: 220px;
         max-height: 220px;
     }
+    .about{
+         margin-top: auto;
+    }
     .about-content, .contact-content {
         max-width: 98vw;
         width: 100vw;
@@ -563,6 +566,9 @@ body {
         min-height: 80px;
         max-width: 140px;
         max-height: 140px;
+    }
+    .about{
+         margin-top: auto;
     }
     .about-content, .contact-content {
         max-width: 100vw;
